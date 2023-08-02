@@ -1,0 +1,104 @@
+html,
+body {
+  accent-color: $color-primary;
+  color: $text-color-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // @media (max-width: 980px) {
+  //   font-size: 16px;
+  // }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex: 1;
+  }
+}
+
+//Links
+
+a {
+  transition: all 0.2s ease-in-out;
+  color: currentColor;
+  &:hover {
+    color: currentColor;
+  }
+}
+
+//Fonts
+
+.font-raleway {
+  font-family: 'Raleway', sans-serif;
+}
+.font-cormorant {
+  font-family: 'Cormorant', serif;
+}
+
+//Colors
+
+.text-primary {
+  color: $color-primary;
+}
+.text-secondary {
+  color: $color-secondary;
+}
+.text-tertiary {
+  color: $color-tertiary;
+}
+.text-lightblue {
+  color: #46d3fa;
+}
+.text-blue {
+  color: #476f9e;
+}
+.text-lightgreen {
+  color: #92b072;
+}
+
+.bg-primary {
+  background-color: $color-primary;
+}
+.bg-secondary {
+  background-color: $color-secondary;
+}
+.bg-tertiary {
+  background-color: $color-tertiary;
+}
+.bg-secondary-black {
+  background-color: #ceb382;
+}
+
+svg {
+  fill: currentColor;
+  polyline {
+    stroke: currentColor;
+  }
+  line {
+    stroke: currentColor;
+  }
+}
+
+.text-wrap {
+  text-wrap: balance;
+}
+
+.fade-in {
+  animation: fadeIn ease 0.3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: white;
+}
