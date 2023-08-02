@@ -15,7 +15,8 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.2",
     "react-slideshow-image": "^4.2.1",
-    "react-spinner": "^0.2.7"
+    "react-spinner": "^0.2.7",
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

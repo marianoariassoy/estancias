@@ -1,11 +1,11 @@
 import { Logo, Whatsapp } from '../icons/icons'
 const Footer = () => {
   return (
-    <section className="m-auto max-w-4xl py-12 flex items-center justify-center">
-      <div className="pr-20">
+    <section className="m-auto max-w-4xl py-12 px-6 lg:flex items-center justify-center">
+      <div className="pr-20 mb-6 logo">
         <Logo />
       </div>
-      <div className="pl-20 border-l border-black text-sm">
+      <div className="lg:pl-20 lg:border-l border-black text-sm">
         <div className="mb-4">
           <h3 className="text-lightblue text-xl font-cormorant ">ESTANCIAS</h3>
           <div>
