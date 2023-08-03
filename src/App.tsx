@@ -7,6 +7,7 @@ import Comollegar from './components/Comollegar'
 import Contacto from './components/Contacto'
 import Elpueblo from './components/Elpueblo'
 import Home from './components/Home'
+import Naturaleza from './components/Naturaleza'
 import Layout from './layout/Layout'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Clubes />
       <Elpueblo />
       <Colegio />
+      <Naturaleza />
       <Comollegar />
       <Contacto />
     </Layout>

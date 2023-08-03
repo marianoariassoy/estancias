@@ -1,10 +1,31 @@
-import { Miscelanea } from '../icons/icons'
+import { Miscelanea, Back, Forward } from '../icons/icons'
+import AboutItem from './AboutItem'
+import { Slide } from 'react-slideshow-image'
+import 'react-slideshow-image/dist/styles.css'
+
+const properties = {
+  arrows: true,
+  autoplay: false,
+  indicators: false,
+  transitionDuration: 400,
+  infinite: true,
+  prevArrow: (
+    <div className="absolute place-content-center -ml-10 lg:-ml-14 text-black transition-all text-secondary-hover hidden lg:grid">
+      <Back />
+    </div>
+  ),
+  nextArrow: (
+    <div className="absolute place-content-center -mr-10 lg:-mr-14 text-black transition-all text-secondary-hover hidden lg:grid">
+      <Forward />
+    </div>
+  ),
+}
 
 const About = () => {
   return (
     <section className="bg-primary" id="about">
-      <div className="container m-auto max-w-3xl px-12 py-24 text-white text-center">
-        <div className="flex justify-center mb-8 text-secondary">
+      <div className="container m-auto max-w-3xl px-12 pt-24 pb-16 text-white text-center ">
+        <div className="flex justify-center mb-12 text-secondary">
           <Miscelanea />
         </div>
 
@@ -27,6 +48,15 @@ const About = () => {
             Disfrutar de El Pueblo, tomar un café o comer en restaurantes y encontrarse con amigos.
           </p>
         </div>
+      </div>
+
+      <div className="container m-auto max-w-6xl px-6 pb-24">
+        <Slide {...properties}>
+          <AboutItem />
+          <AboutItem />
+          <AboutItem />
+          <AboutItem />
+        </Slide>
       </div>
     </section>
   )

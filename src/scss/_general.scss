@@ -43,10 +43,12 @@ a {
 .text-primary {
   color: $color-primary;
 }
-.text-secondary {
+.text-secondary,
+.text-secondary-hover:hover {
   color: $color-secondary;
 }
-.text-tertiary {
+.text-tertiary,
+.text-tertiary-hover:hover {
   color: $color-tertiary;
 }
 .text-lightblue {
@@ -70,6 +72,20 @@ a {
 }
 .bg-secondary-black {
   background-color: #ceb382;
+}
+.bg-gray {
+  background-color: #606060;
+}
+.bg-lightgreen {
+  background-color: #92b072;
+}
+
+.border-tertiary {
+  border-color: $color-tertiary;
+  &:hover {
+    background-color: $color-tertiary;
+    color: white;
+  }
 }
 
 svg {

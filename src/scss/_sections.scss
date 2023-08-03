@@ -26,3 +26,25 @@
     }
   }
 }
+
+#banner {
+  height: 33vh;
+  background-image: url('./images/banner.jpg');
+}
+
+#elpueblo {
+  background-image: url('./images/bg-club.jpg');
+  background-size: 100% 50vh;
+}
+
+#colegio {
+  background-image: url('./images/bg-colegio.jpg');
+}
+
+#naturaleza {
+  background-image: url('./images/bg-naturaleza.png');
+
+  @media (max-width: 980px) {
+    background-size: auto 33%;
+  }
+}

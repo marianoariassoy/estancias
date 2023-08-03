@@ -1,0 +1,55 @@
+import { Plus } from '../icons/icons'
+
+type Data = {
+  id: number
+  description: string
+  image: string
+  logo: string
+  whatsapp: string
+  web: string
+}
+
+const ElpuebloItem = ({ data }: { data: Data }) => {
+  return (
+    <article className="lg:px-4">
+      <div className="aspect-video">
+        <img src={data.image} className="h-full w-full object-cover" />
+      </div>
+      <div className=" bg-white text-center h-72 flex flex-col justify-between">
+        <div className="p-6">
+          {data.logo && (
+            <div className="flex justify-center">
+              <img src={data.logo} className="mb-4 w-1/3" />
+            </div>
+          )}
+          <p className="text-wrap text-sm">{data.description}</p>
+        </div>
+        <div>
+          {data.whatsapp ? (
+            <a
+              href={`https://api.whatsapp.com/send?phone=${data.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-secondary-black text-white px-4 py-2 font-medium hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm justify-center flex items-center gap-x-2"
+            >
+              CONTACTAR <Plus />
+            </a>
+          ) : (
+            data.web && (
+              <a
+                href={data.web}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-secondary-black text-white px-4 py-2 font-medium hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm justify-center flex items-center gap-x-2"
+              >
+                CONTACTAR <Plus />
+              </a>
+            )
+          )}
+        </div>
+      </div>
+    </article>
+  )
+}
+
+export default ElpuebloItem
