@@ -161,3 +161,15 @@ export const elpueblo = [
     web: 'https://www.elpueblo.com.ar',
   },
 ]
+
+export const dataContact = {
+  select: ['Seleccione área a contactar', 'Administración Estancias', 'Ventas'],
+  name: 'Nombre y apellido',
+  email: 'E-Mail',
+  phone: 'Teléfono de contacto',
+  message: 'Mensaje',
+  send: 'Enviar',
+  thanks: '¡Su mensaje fue enviado! Gracias por contactarte con nosotros.',
+  error: 'Se produjo un error al enviar el mensaje.',
+  required: 'Por favor complete este campo',
+}

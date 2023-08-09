@@ -1,3 +1,26 @@
+nav {
+  @media (max-width: 980px) {
+    position: fixed;
+    left: 0;
+    top: 100px;
+    width: 100vw;
+    height: 100vh;
+    padding-left: 1.5rem;
+    background-color: white;
+    padding-top: 2rem;
+
+    ul {
+      display: block !important;
+
+      li {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        // font-size: 1rem;
+      }
+    }
+  }
+}
+
 .text-sm {
   font-size: 0.8rem;
 }
@@ -15,6 +38,10 @@
   }
 }
 
+#hero {
+  height: 65vh;
+}
+
 .slider-home {
   height: 65vh;
 }
@@ -22,7 +49,7 @@
 .logo {
   svg {
     @media (max-width: 980px) {
-      width: 140px;
+      width: 160px;
     }
   }
 }
@@ -47,4 +74,8 @@
   @media (max-width: 980px) {
     background-size: auto 33%;
   }
+}
+
+#contacto {
+  background-image: url('./images/bg-contacto.jpg');
 }

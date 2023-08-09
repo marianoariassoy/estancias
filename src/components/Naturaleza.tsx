@@ -15,7 +15,7 @@ const properties = {
     </div>
   ),
   nextArrow: (
-    <div className="absolute place-content-center mr-40 text-white transition-all text-secondary-hover hidden lg:grid">
+    <div className="absolute place-content-center mr-24 text-white transition-all text-secondary-hover hidden lg:grid">
       <Forward />
     </div>
   ),
@@ -25,7 +25,7 @@ const Naturaleza = () => {
   return (
     <section className="bg-lightgreen bg-no-repeat bg-bottom" id="naturaleza">
       <div className="container m-auto max-w-6xl px-6 py-24 lg:pb-40 relative">
-        <div className="w-full lg:w-2/3">
+        <div className="w-full lg:w-3/5">
           <Slide {...properties}>
             <img
               src="https://images.pexels.com/photos/4534200/pexels-photo-4534200.jpeg?auto=compress&cs=tinysrgb&w=1600"
