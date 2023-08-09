@@ -1,7 +1,11 @@
 import { Miscelanea } from '../icons/icons'
-import { clubes } from '../data/data'
 import ClubesItem from './ClubesItem'
+import useFetch from '../hooks/useFetch'
+import Loader from './Loader'
+
 const Clubes = () => {
+  const { data, loading } = useFetch(`/clubes`)
+
   return (
     <section id="clubes">
       <div className="container m-auto max-w-5xl px-6 py-24">
@@ -18,11 +22,17 @@ const Clubes = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-y-8">
-          {clubes.map((club) => (
-            <ClubesItem key={club.id} club={club} />
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center">
+            <Loader />
+          </div>
+        ) : (
+          <div className="grid lg:grid-cols-3 gap-y-8">
+            {data.map((data) => (
+              <ClubesItem key={data.id} data={data} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )

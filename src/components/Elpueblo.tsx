@@ -1,8 +1,9 @@
-import { elpueblo } from '../data/data'
 import { Back, Forward } from '../icons/icons'
 import ElpuebloItem from './ElpuebloItem'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
+import useFetch from '../hooks/useFetch'
+import Loader from './Loader'
 
 const properties = {
   arrows: true,
@@ -42,6 +43,8 @@ const responsiveSettings = [
 ]
 
 const Elpueblo = () => {
+  const { data, loading } = useFetch(`/comercios`)
+
   return (
     <section className="bg-no-repeat bg-bottom" id="elpueblo">
       <div className="container m-auto max-w-5xl px-6 pb-24 pt-12">
@@ -64,13 +67,15 @@ const Elpueblo = () => {
           </div>
         </div>
 
-        <div>
+        {loading ? (
+          <div className="flex justify-center">
+            <Loader />
+          </div>
+        ) : (
           <Slide {...properties} responsive={responsiveSettings}>
-            {elpueblo.map((data) => (
-              <ElpuebloItem key={data.id} data={data} />
-            ))}
+            {data && data.map((data) => <ElpuebloItem key={data.id} data={data} />)}
           </Slide>
-        </div>
+        )}
       </div>
     </section>
   )

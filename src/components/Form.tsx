@@ -26,13 +26,12 @@ const Form = () => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
-      to: 'info@ ',
-      from: 'no-reply@ ',
-      from_name: 'Estancias',
-      subject: 'Contacto',
+      to: 'no-reply@estanciasdelpilar.com',
+      from: 'no-reply@estanciasdelpilar.com',
+      from_name: 'Estancias del Pilar',
     }
 
-    axios.post('', { ...data, ...sender }).then((data) => {
+    axios.post('https://www.estanciasdelpilar.com/backend/send-email.php', { ...data, ...sender }).then((data) => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
@@ -50,9 +49,9 @@ const Form = () => {
   return (
     <>
       {error ? (
-        <span className="text-2xl font-bold">{dataContact.error}</span>
+        <span className="text-2xl font-bold text-white">{dataContact.error}</span>
       ) : sended ? (
-        <span className="text-3xl font-bold">{dataContact.thanks}</span>
+        <span className="text-3xl font-bold text-white">{dataContact.thanks}</span>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
@@ -95,19 +94,18 @@ const Form = () => {
             placeholder={dataContact.message}
             {...register('message')}
           />
-
-          {sending ? (
-            <BeatLoader className="mt-6" />
-          ) : (
-            <div className="flex justify-end">
+          <div className="flex justify-end">
+            {sending ? (
+              <BeatLoader className="mt-6" />
+            ) : (
               <button
                 type="submit"
                 className="bg-lightblue rounded-2xl font-medium text-white h-11 hover:bg-black hover:shadow-xl transition-all px-8 uppercase text-sm"
               >
                 {dataContact.send}
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </form>
       )}
     </>

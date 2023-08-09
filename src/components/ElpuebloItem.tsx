@@ -1,8 +1,10 @@
 import { Plus } from '../icons/icons'
+import TextHTML from '../hooks/useHTML'
+import ImageComponent from './ImageComponent'
 
 type Data = {
   id: number
-  description: string
+  text: string
   image: string
   logo: string
   whatsapp: string
@@ -13,19 +15,21 @@ const ElpuebloItem = ({ data }: { data: Data }) => {
   return (
     <article className="lg:px-4">
       <div className="aspect-video">
-        <img src={data.image} className="h-full w-full object-cover" />
+        <ImageComponent src={data.image} alt="" />
       </div>
       <div className=" bg-white text-center h-72 flex flex-col justify-between">
         <div className="p-6">
           {data.logo && (
             <div className="flex justify-center">
-              <img src={data.logo} className="mb-4 w-1/3" />
+              <img src={data.logo} className="mb-2 w-full" />
             </div>
           )}
-          <p className="text-wrap text-sm">{data.description}</p>
+          <div className="text-wrap text-sm">
+            <TextHTML text={data.text} />
+          </div>
         </div>
         <div>
-          {data.whatsapp ? (
+          {+data.whatsapp > 0 ? (
             <a
               href={`https://api.whatsapp.com/send?phone=${data.whatsapp}`}
               target="_blank"

@@ -2,6 +2,8 @@ import { Miscelanea, Back, Forward } from '../icons/icons'
 import AboutItem from './AboutItem'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
+import useFetch from '../hooks/useFetch'
+import Loader from './Loader'
 
 const properties = {
   arrows: true,
@@ -22,6 +24,8 @@ const properties = {
 }
 
 const About = () => {
+  const { data, loading } = useFetch(`/novedades`)
+
   return (
     <section className="bg-primary" id="about">
       <div className="container m-auto max-w-3xl px-12 pt-24 pb-16 text-white text-center ">
@@ -51,12 +55,15 @@ const About = () => {
       </div>
 
       <div className="container m-auto max-w-6xl px-6 pb-24">
-        <Slide {...properties}>
-          <AboutItem />
-          <AboutItem />
-          <AboutItem />
-          <AboutItem />
-        </Slide>
+        {loading ? (
+          <Loader />
+        ) : (
+          <Slide {...properties}>
+            {data.map((data) => (
+              <AboutItem data={data} key={data.id} />
+            ))}
+          </Slide>
+        )}
       </div>
     </section>
   )
