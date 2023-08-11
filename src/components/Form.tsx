@@ -56,7 +56,7 @@ const Form = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
             <select
-              className="w-full bg-white h-11 rounded-3xl cursor-pointer mb-2 px-6 transition-all hover:bg-gray-200  "
+              className="w-full bg-white h-11 rounded-2xl cursor-pointer mb-2 px-6 transition-all hover:bg-gray-200"
               placeholder={dataContact.select[0]}
               {...register('subject', { required: true })}
             >
@@ -66,7 +66,7 @@ const Form = () => {
           </div>
           <div>
             <input
-              className="w-full bg-white h-11 rounded-3xl mb-2 px-6"
+              className="w-full bg-white h-11 rounded-2xl mb-2 px-6"
               placeholder={dataContact.name}
               {...register('name', { required: true })}
             />
@@ -74,7 +74,7 @@ const Form = () => {
           </div>
           <div>
             <input
-              className="w-full bg-white h-11 rounded-3xl mb-2 px-6"
+              className="w-full bg-white h-11 rounded-2xl mb-2 px-6"
               placeholder={dataContact.email}
               {...register('email', { required: true })}
             />
@@ -82,7 +82,7 @@ const Form = () => {
           </div>
           <div>
             <input
-              className="w-full bg-white h-11 rounded-3xl mb-2 px-6"
+              className="w-full bg-white h-11 rounded-2xl mb-2 px-6"
               placeholder={dataContact.phone}
               {...register('phone', { required: true })}
             />
@@ -90,7 +90,7 @@ const Form = () => {
           </div>
 
           <textarea
-            className="w-full bg-white h-28 rounded-3xl mb-2 px-6 py-4"
+            className="w-full bg-white h-28 rounded-2xl mb-2 px-6 py-4"
             placeholder={dataContact.message}
             {...register('message')}
           />
