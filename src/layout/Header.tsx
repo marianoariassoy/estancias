@@ -9,14 +9,14 @@ const Header = () => {
   }
 
   return (
-    <section className="m-auto max-w-6xl p-6 px-6 flex gap-x-4 items-center">
+    <section className="m-auto max-w-6xl p-6 px-6 flex gap-x-4 items-end lg:items-center">
       <div className="flex-grow text-black ">
         <a href="#hero" className="scroll hover:text-gray-600 logo">
           <Logo />
         </a>
       </div>
-      <div className="pt-9 text-sm">
-        <nav className="fade-in hidden lg:block" onClick={OpenMenu}>
+      <div className="text-sm">
+        <nav className="fade-in hidden lg:mt-9 lg:block" onClick={OpenMenu}>
           <ul className="flex items-center gap-x-8 font-raleway font-bold text-black">
             {nav.map((item) => (
               <li key={item.id}>
@@ -28,10 +28,10 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <div className="flex flex-grow justify-end pt-9 text-sm items-center gap-x-4">
+      <div className="flex flex-grow justify-end items-center lg:items-start gap-x-4 lg:mt-9">
         <a
           href="https://wa.me/549115063-1324"
-          className="flex items-center gap-x-2 bg-tertiary text-white px-4 py-2 rounded-md font-medium hover:text-white hover:shadow-lg hover:bg-black"
+          className="flex items-center gap-x-2 font-raleway font-bold bg-tertiary text-white px-4 py-2 rounded-md  hover:text-white hover:shadow-lg hover:bg-black text-sm"
           target="_blank"
           rel="noopener noreferrer"
         >
