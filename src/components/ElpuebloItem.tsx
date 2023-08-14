@@ -34,7 +34,7 @@ const ElpuebloItem = ({ data }: { data: Data }) => {
               href={`https://api.whatsapp.com/send?phone=${data.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-secondary-black text-white px-4 py-2 font-medium hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm justify-center flex items-center gap-x-2"
+              className="bg-secondary-black text-white px-4 py-2 font-bold font-raleway hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm justify-center flex items-center gap-x-2"
             >
               CONTACTAR <Plus />
             </a>
@@ -44,7 +44,7 @@ const ElpuebloItem = ({ data }: { data: Data }) => {
                 href={data.web}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-secondary-black text-white px-4 py-2 font-medium hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm justify-center flex items-center gap-x-2"
+                className="bg-secondary-black text-white px-4 py-2 font-bold font-raleway hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm justify-center flex items-center gap-x-2"
               >
                 CONTACTAR <Plus />
               </a>

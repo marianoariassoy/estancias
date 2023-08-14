@@ -30,8 +30,8 @@ const Header = () => {
       </div>
       <div className="flex flex-grow justify-end items-center lg:items-start gap-x-4 lg:mt-9">
         <a
-          href="https://wa.me/549115063-1324"
-          className="flex items-center gap-x-2 font-raleway font-bold bg-tertiary text-white px-4 py-2 rounded-md  hover:text-white hover:shadow-lg hover:bg-black text-sm"
+          href="https://wa.me/5491150631324"
+          className="flex items-center gap-x-2 font-raleway font-bold bg-tertiary text-white px-4 py-2 rounded-md hover:text-white hover:shadow-lg hover:bg-black text-sm"
           target="_blank"
           rel="noopener noreferrer"
         >

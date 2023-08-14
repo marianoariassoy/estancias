@@ -46,11 +46,11 @@ const Elpueblo = () => {
   const { data, loading } = useFetch(`/comercios`)
 
   return (
-    <section className="bg-no-repeat bg-bottom" id="elpueblo">
+    <section className="bg-no-repeat bg-bottom bg-secondary" id="elpueblo">
       <div className="container m-auto max-w-5xl px-6 pb-24 pt-12">
         <div className="mb-16 lg:flex items-center">
           <div className="lg:w-1/3 flex justify-center mb-8 lg:m-0">
-            <img src="./images/elpueblo.jpg" alt="Logo El Pueblo" />
+            <img src="./images/logo-el-pueblo.png" alt="Logo El Pueblo" />
           </div>
           <div className="lg:w-2/3 lg:pl-6">
             <h1 className="text-blue mb-6 font-cormorant uppercase text-3xl tracking-widest">EL PUEBLO</h1>

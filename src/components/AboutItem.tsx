@@ -24,8 +24,8 @@ const AboutItem = ({ data }: { data: Novedades }) => {
         </div>
         <div className="lg:flex justify-between w-full items-center">
           <a
-            href="#contact"
-            className="scroll flex items-center gap-x-2 bg-tertiary text-white px-4 py-2 rounded-md font-medium hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm"
+            href="https://wa.me/5491150631324"
+            className="flex items-center gap-x-2 bg-tertiary text-white px-4 py-2 rounded-md font-bold hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm font-raleway"
             target="_blank"
             rel="noopener noreferrer"
           >
