@@ -38,7 +38,7 @@ const About = () => {
         </div>
         <div>
           <p className="text-wrap">
-            El lujo esencial de poder vivir en un ecosistema semejante, rodeado de amplias y extensas areas verdes y de
+            El lujo esencial de poder vivir en un ecosistema semejante, rodeado de amplias y extensas areas verdes y
             lagunas o cruzarse con liebres, lechuzas y zorros.
             <br />
             <br />

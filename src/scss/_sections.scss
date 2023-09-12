@@ -71,3 +71,13 @@ nav {
 #contacto {
   background-image: url('/images/bg-contacto.jpg');
 }
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('/images/chevron-down-solid.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-position-x: right 1rem;
+  background-size: 20px;
+}

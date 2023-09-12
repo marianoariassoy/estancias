@@ -26,7 +26,7 @@ const ClubesItem = ({ data }: { data: Club }) => {
           href={data.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gray text-white px-4 py-2 rounded-md font-bold hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm font-raleway"
+          className="bg-gray text-white px-4 py-3 rounded-md font-bold hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm font-raleway"
         >
           CONTACTAR
         </a>

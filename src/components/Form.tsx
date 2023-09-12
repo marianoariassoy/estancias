@@ -26,7 +26,7 @@ const Form = () => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
-      to: 'no-reply@estanciasdelpilar.com',
+      to: 'intendencia.estancias@gmail.com',
       from: 'no-reply@estanciasdelpilar.com',
       from_name: 'Estancias del Pilar',
     }
@@ -60,6 +60,7 @@ const Form = () => {
               placeholder={dataContact.select[0]}
               {...register('subject', { required: true })}
             >
+              <option>Seleccione una opción</option>
               <option>{dataContact.select[1]}</option>
               <option>{dataContact.select[2]}</option>
             </select>

@@ -18,10 +18,10 @@ const Comollegar = () => {
           </div>
 
           <h1 className="mb-6 font-cormorant uppercase text-3xl tracking-widest text-blue mt-6">CÓMO LLEGAR</h1>
-          <h2 className="mb-4">Zona Norte (ramal Pilar) km 52,5</h2>
+          <h2 className="mb-4">Zona Norte (ramal Pilar) km 56,5</h2>
           <strong className="font-medium">Cómo llegar:</strong>
           <p className="text-wrap text-sm">
-            En Panamericana (ramal Pilar) km 52,5 salir de autopista, doblar a la izquierda por debajo de la ruta.
+            En Panamericana (ramal Pilar) km 56,5 salir de autopista, doblar a la izquierda por debajo de la ruta.
             Avanzar hacia la derecha 200mts, cruzar la ruta 8. Seguir derecho pasando una casilla de guardia. Avanzar
             5km hasta llegar a la entrada de Estancias.
           </p>

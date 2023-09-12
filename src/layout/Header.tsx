@@ -9,8 +9,8 @@ const Header = () => {
   }
 
   return (
-    <section className="m-auto max-w-6xl p-6 px-6 flex gap-x-4 items-end lg:items-center">
-      <div className="flex-grow text-black ">
+    <section className="m-auto max-w-6xl px-6 py-8 lg:py-6 flex gap-x-4 items-end lg:items-center">
+      <div className="flex-grow text-black">
         <a href="#hero" className="scroll hover:text-gray-600 logo">
           <Logo />
         </a>
