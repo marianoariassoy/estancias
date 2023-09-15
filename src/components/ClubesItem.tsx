@@ -11,7 +11,7 @@ type Club = {
 
 const ClubesItem = ({ data }: { data: Club }) => {
   return (
-    <article className="lg:px-4">
+    <article className="lg:px-4 text-center lg:text-left">
       <div className="aspect-video">
         <ImageComponent src={data.image} alt={data.title} />
       </div>

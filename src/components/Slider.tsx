@@ -29,8 +29,8 @@ const SliderItem = ({ src, alt, title, text }: SliderItemProps) => {
     <div className="slider-home relative">
       <div className="absolute w-full h-full text-center grid content-center text-white z-10 bg-black/25 px-6">
         <div>
-          <h1 className="text-5xl lg:text-6xl font-cormorant mb-4 tracking-widest">{title}</h1>
-          <div className="text-xl lg:text-2xl font-raleway font-bold whitespace-pre">{text}</div>
+          <h1 className="text-4xl lg:text-6xl font-cormorant lg:mb-4 tracking-widest">{title}</h1>
+          <div className="lg:text-2xl font-raleway font-bold whitespace-pre">{text}</div>
         </div>
       </div>
       <img src={src} alt={alt} className="fade-in h-full w-full object-cover object-center block" />

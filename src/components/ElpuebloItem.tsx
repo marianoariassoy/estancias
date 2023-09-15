@@ -17,8 +17,8 @@ const ElpuebloItem = ({ data }: { data: Data }) => {
       <div className="aspect-video">
         <ImageComponent src={data.image} alt="" />
       </div>
-      <div className=" bg-white text-center h-72 flex flex-col justify-between">
-        <div className="p-6">
+      <div className="bg-white text-center h-72 flex flex-col justify-between">
+        <div className="px-6">
           {data.logo && (
             <div className="flex justify-center">
               <img src={data.logo} className="mb-2 w-full" />
@@ -34,7 +34,7 @@ const ElpuebloItem = ({ data }: { data: Data }) => {
               href={`https://api.whatsapp.com/send?phone=${data.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-secondary-black text-white px-4 py-3 font-bold font-raleway hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm justify-center flex items-center gap-x-2"
+              className="bg-secondary-black text-white px-4 py-3 font-bold font-raleway hover:text-white hover:shadow-lg hover:bg-black lg:m-0 text-sm justify-center flex items-center gap-x-2"
             >
               CONTACTAR <Plus />
             </a>
@@ -44,7 +44,7 @@ const ElpuebloItem = ({ data }: { data: Data }) => {
                 href={data.web}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-secondary-black text-white px-4 py-3 font-bold font-raleway hover:text-white hover:shadow-lg hover:bg-black mb-4 lg:m-0 text-sm justify-center flex items-center gap-x-2"
+                className="bg-secondary-black text-white px-4 py-3 font-bold font-raleway hover:text-white hover:shadow-lg hover:bg-black lg:m-0 text-sm justify-center flex items-center gap-x-2"
               >
                 CONTACTAR <Plus />
               </a>

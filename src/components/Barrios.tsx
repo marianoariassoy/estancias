@@ -19,7 +19,7 @@ const Barrios = () => {
           <div className="lg:w-3/5 ">
             <img src="./images/map.jpg" alt="Mapa de Estancias" className="w-full" />
           </div>
-          <div className="text-sm lg:w-2/5 mt-8 lg:mt-14 lg:pl-6">
+          <div className="text-sm lg:w-2/5 mt-8 lg:mt-14 lg:pl-6 text-center lg:text-left">
             {barrios.map((barrio) => (
               <p key={barrio.id} className="mb-4 text-wrap">
                 <span className="font-semibold">{barrio.title}:</span> {barrio.description}

@@ -12,12 +12,12 @@ const properties = {
   infinite: true,
 
   prevArrow: (
-    <div className="absolute place-content-center ml-6 text-white transition-all text-secondary-hover hidden lg:grid">
+    <div className="absolute opacity-50 lg:opacity-100 place-content-center ml-6 text-white transition-all grid hover:text-black hover:opacity-100">
       <Back />
     </div>
   ),
   nextArrow: (
-    <div className="absolute place-content-center mr-24 text-white transition-all text-secondary-hover hidden lg:grid">
+    <div className="absolute opacity-50 lg:opacity-100 place-content-center mr-6 lg:mr-24 text-white transition-all grid hover:text-black  hover:opacity-100">
       <Forward />
     </div>
   ),
@@ -27,7 +27,7 @@ const Naturaleza = () => {
   const { data, loading } = useFetch(`/fotos`)
 
   return (
-    <section className="bg-lightgreen bg-no-repeat bg-bottom" id="naturaleza">
+    <section className="bg-lightgreen bg-no-repeat bg-bottom text-center lg:text-left" id="naturaleza">
       <div className="container m-auto max-w-6xl px-6 py-24 lg:pb-40 relative">
         {loading ? (
           <div className="w-full lg:w-3/5">

@@ -1,72 +1,52 @@
 import { Logo, Whatsapp } from '../icons/icons'
+import useFetch from '../hooks/useFetch'
+
+type DataProps = {
+  data: null | Array<{ id: number; title: string; text: string; url: string }>
+  loading: boolean
+}
+
 const Footer = () => {
+  const { data, loading } = useFetch(`/contactos`) as DataProps
+
   return (
-    <div className="m-auto max-w-6xl py-20 px-6">
-      <section className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 border-b border-black pb-12 mb-12 [&>div>div>span>a]:underline">
-        <div className="col logo">
-          <Logo />
-        </div>
-        <div className="col text-sm flex flex-col gap-y-4">
-          <div>
-            <strong className="font-semibold block text-black">ADMINISTRACIÓN ESTANCIAS DEL RÍO</strong>
-            <span className="block">(02304) 404640</span>
-          </div>
-          <div>
-            <strong className="font-semibold block text-black">ADMINISTRACIÓN ESTANCIAS GOLF</strong>
-            <span className="block">(+54 9 11) 5063-1348</span>
-          </div>
-          <div>
-            <strong className="font-semibold block text-black">OFICINA ATENCIÓN PROPIETARIO</strong>
-            <span className="block">(0230) 4457541 / 4457873 / 4232754 Interno: 700</span>
-            <span className="block">
-              <a href="mailto:atencionalpropietario.estancias@gmail.com">atencionalpropietario.estancias@gmail.com</a>
-            </span>
-          </div>
-          <div>
-            <strong className="font-semibold block text-black">AUTORIZACIONES</strong>
-            <span className="block">(0230) 4457541 / 4457873 / 4232754</span>
-            <span className="block">15 70981003 (sólo mensajes WhatsApp)</span>
-            <span className="block">
-              <a
-                href="mailto:autorizaciones.estancias@gmail.com
-"
-              >
-                autorizaciones.estancias@gmail.com
-              </a>
-            </span>
+    <div className="m-auto max-w-6xl py-20 px-6 text-center lg:text-left">
+      <section className="w-full flex flex-col lg:flex-row gap-y-8 border-b border-black pb-12 mb-12 [&>div>div>span>a]:underline">
+        <div className="col lg:w-2/5">
+          <div className="inline-block logo">
+            <Logo />
           </div>
         </div>
-        <div className="col text-sm flex flex-col gap-y-4">
-          <div>
-            <strong className="font-semibold block text-black">INTENDENCIA</strong>
-            <span className="block">(0230) 4457541 / 4457873 / 4232754</span>
-            <span className="block">15 49935034 (sólo mensajes WhatsApp)</span>
-            <span className="block">
-              <a
-                href="mailto:intendencia.estancias@gmail.com
-"
-              >
-                intendencia.estancias@gmail.com
-              </a>
-            </span>
-          </div>
-          <div>
-            <strong className="font-semibold block text-black">ATENCIÓN AL PROPIETARIO 24 HS</strong>
-            <span className="block">15 49944176 (sólo mensajes WhatsApp)</span>
-            <span className="block">
-              <a href="mailto:intendencia.estancias@gmail.com">intendencia.estancias@gmail.com</a>
-            </span>
-          </div>
+        <div className="col text-sm  grid lg:grid-cols-2 gap-x-12 gap-y-4 ">
+          {!loading &&
+            data.map((item) => (
+              <article key={item.id}>
+                <strong className="font-semibold block text-black">{item.title}</strong>
+                <span className="block">{item.text}</span>
+                {item.url && (
+                  <a href={item.url} target="_blank" className="underline hover:text-black" rel="noopener noreferrer">
+                    {item.url}
+                  </a>
+                )}
+              </article>
+            ))}
         </div>
       </section>
       <section className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        <div>
-          <img src="./images/casa.svg" alt="Logo Casa Practika" />
+        <div className="inline-block">
+          <a
+            href="https://www.casapractika.com.ar/"
+            className="hover:opacity-80 inline-block"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./images/casa.svg" alt="Logo Casa Practika" />
+          </a>
         </div>
         <div className="text-sm">
           <h3 className="text-tertiary text-xl font-cormorant">VENTAS</h3>
           <div>(+54 9 11) 5063-1324</div>
-          <div className="flex gap-x-2 items-center justify-start lg:justify-start">
+          <div className="flex gap-x-2 items-center justify-center lg:justify-start">
             Contactanos vía whatsapp
             <a
               href="https://wa.me/5491150631324"
@@ -77,6 +57,15 @@ const Footer = () => {
               <Whatsapp />
             </a>
           </div>
+
+          <a
+            href="https://www.casapractika.com.ar/"
+            className="font-bold block hover:text-black"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            casapractika.com.ar
+          </a>
         </div>
       </section>
     </div>

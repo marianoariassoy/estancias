@@ -81,7 +81,7 @@ export const barrios = [
 ]
 
 export const dataContact = {
-  select: ['Seleccione área a contactar', 'Administración Estancias', 'Ventas'],
+  select: ['Seleccione área a contactar', 'Administración Estancias', 'Ventas - Inmobiliaria'],
   name: 'Nombre y apellido',
   email: 'E-Mail',
   phone: 'Teléfono de contacto',

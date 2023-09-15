@@ -12,12 +12,12 @@ const properties = {
   transitionDuration: 400,
   infinite: true,
   prevArrow: (
-    <div className="absolute place-content-center -ml-10 lg:-ml-14 text-black transition-all text-secondary-hover hidden lg:grid">
+    <div className="absolute place-content-center -ml-12 text-black transition-all text-secondary-hover grid">
       <Back />
     </div>
   ),
   nextArrow: (
-    <div className="absolute place-content-center -mr-10 lg:-mr-14 text-black transition-all text-secondary-hover hidden lg:grid">
+    <div className="absolute place-content-center -mr-12 text-black transition-all text-secondary-hover grid">
       <Forward />
     </div>
   ),
@@ -25,9 +25,10 @@ const properties = {
 
 const About = () => {
   const { data, loading } = useFetch(`/novedades`)
+  const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos`)
 
   return (
-    <section className="bg-primary" id="about">
+    <section className="bg-primary px-8 lg:px-auto" id="about">
       <div className="container m-auto max-w-3xl px-12 pt-24 pb-16 text-white text-center ">
         <div className="flex justify-center mb-12 text-secondary">
           <Miscelanea />
@@ -37,20 +38,7 @@ const About = () => {
           Vivir rodeado de naturaleza, seguridad con tecnología de última generación y la mayor variedad de deportes.
         </div>
         <div>
-          <p className="text-wrap">
-            El lujo esencial de poder vivir en un ecosistema semejante, rodeado de amplias y extensas areas verdes y
-            lagunas o cruzarse con liebres, lechuzas y zorros.
-            <br />
-            <br />
-            Chicos en bici yendo al colegio, gente caminando con amigos o haciendo deportes y cabalgatas, son las
-            imágenes más comunes de Estancias.
-            <br />
-            <br />
-            Seguridad con tecnología de última generación.
-            <br />
-            <br />
-            Disfrutar de El Pueblo, tomar un café o comer en restaurantes y encontrarse con amigos.
-          </p>
+          <p className="text-wrap whitespace-pre-wrap">{!loadingTexts && dataTexts[0].text}</p>
         </div>
       </div>
 

@@ -35,12 +35,11 @@ nav {
   }
 }
 
-#hero {
-  height: 80vh;
-}
-
 .slider-home {
   height: 80vh;
+  @media (max-width: 980px) {
+    height: 50vh;
+  }
 }
 
 .logo {
@@ -80,4 +79,9 @@ select {
   background-position: right center;
   background-position-x: right 1rem;
   background-size: 20px;
+}
+
+.back {
+  right: 3rem !important;
+  left: auto !important;
 }

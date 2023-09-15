@@ -14,12 +14,12 @@ const properties = {
   slidesToShow: 3,
   slidesToScroll: 3,
   prevArrow: (
-    <div className="absolute place-content-center -ml-10 lg:-ml-14 text-black transition-all text-secondary-hover hidden lg:grid">
+    <div className="absolute place-content-center -ml-12 text-black transition-all  grid hover:text-gray-400">
       <Back />
     </div>
   ),
   nextArrow: (
-    <div className="absolute place-content-center -mr-10 lg:-mr-14 text-black transition-all text-secondary-hover hidden lg:grid">
+    <div className="absolute place-content-center -mr-12 text-black transition-all  grid hover:text-gray-400">
       <Forward />
     </div>
   ),
@@ -46,7 +46,7 @@ const Elpueblo = () => {
   const { data, loading } = useFetch(`/comercios`)
 
   return (
-    <section className="bg-no-repeat bg-bottom bg-secondary" id="elpueblo">
+    <section className="bg-no-repeat bg-bottom bg-secondary text-center lg:text-left" id="elpueblo">
       <div className="container m-auto max-w-5xl px-6 pb-24 pt-12">
         <div className="mb-16 lg:flex items-center">
           <div className="lg:w-1/3 flex justify-center mb-8 lg:m-0">
@@ -67,15 +67,17 @@ const Elpueblo = () => {
           </div>
         </div>
 
-        {loading ? (
-          <div className="flex justify-center">
-            <Loader />
-          </div>
-        ) : (
-          <Slide {...properties} responsive={responsiveSettings}>
-            {data && data.map((data) => <ElpuebloItem key={data.id} data={data} />)}
-          </Slide>
-        )}
+        <div className="px-8 lg:px-auto">
+          {loading ? (
+            <div className="flex justify-center">
+              <Loader />
+            </div>
+          ) : (
+            <Slide {...properties} responsive={responsiveSettings}>
+              {data && data.map((data) => <ElpuebloItem key={data.id} data={data} />)}
+            </Slide>
+          )}
+        </div>
       </div>
     </section>
   )
