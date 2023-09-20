@@ -25,6 +25,7 @@ const properties = {
 
 const Naturaleza = () => {
   const { data, loading } = useFetch(`/fotos`)
+  const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos`)
 
   return (
     <section className="bg-lightgreen bg-no-repeat bg-bottom text-center lg:text-left" id="naturaleza">
@@ -42,12 +43,7 @@ const Naturaleza = () => {
         <div className="p-8 pb-16 lg:p-16 pt-8 bg-secondary w-full lg:max-w-lg lg:right-6 lg:top-1/4 lg:absolute">
           <h1 className="mb-6 font-cormorant uppercase text-3xl tracking-widest text-lightgreen">NATURALEZA</h1>
           <h2 className="text-black font-medium">Un paisaje de ensueño</h2>
-          <p className="text-wrap mb-4">
-            Estancias te permite disfrutar de un entorno natural pampeano con gran calidad paisajística. Ligeras
-            ondulaciones verdes, profundos bosques y la ribera del Río Luján, dan como resultado paisajes de infinita
-            grandeza.
-          </p>
-          <p className="text-wrap">Imposible imaginar un ecosistema semejante tan cerca de Buenos Aires.</p>
+          <p className="text-wrap whitespace-pre-wrap">{!loadingTexts && dataTexts[5].text}</p>
         </div>
       </div>
     </section>

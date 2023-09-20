@@ -15,7 +15,11 @@ const Home = () => {
     scroll()
   }, [])
 
-  return <section className="relative mt-28 slider-home bg-gray-100">{!loading && <Slider data={data} />}</section>
+  return (
+    <section className="relative mt-24 slider-home bg-gray-100" id="hero">
+      {!loading && <Slider data={data} />}
+    </section>
+  )
 }
 
 export default Home

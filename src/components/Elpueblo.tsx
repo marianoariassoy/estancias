@@ -44,26 +44,19 @@ const responsiveSettings = [
 
 const Elpueblo = () => {
   const { data, loading } = useFetch(`/comercios`)
+  const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos`)
 
   return (
     <section className="bg-no-repeat bg-bottom bg-secondary text-center lg:text-left" id="elpueblo">
       <div className="container m-auto max-w-5xl px-6 pb-24 pt-12">
-        <div className="mb-16 lg:flex items-center">
+        <div className="mb-8 lg:flex items-center">
           <div className="lg:w-1/3 flex justify-center mb-8 lg:m-0">
             <img src="./images/logo-el-pueblo.png" alt="Logo El Pueblo" />
           </div>
           <div className="lg:w-2/3 lg:pl-6">
             <h1 className="text-blue mb-6 font-cormorant uppercase text-3xl tracking-widest">EL PUEBLO</h1>
             <h2 className="text-blue text-xl font-medium">Un lugar de encuentro</h2>
-            <p className="text-wrap  mb-4">
-              Un espacio para toda la comunidad, donde la gastronomía, el entretenimiento y las actividades sociales
-              tienen un rol protagónico.
-            </p>
-            <p className="text-wrap text-sm">
-              Oficinas - Locales - Escuela Paisajismo Pampa Infinita - Supermercado completo Restaurante - Carnicería -
-              Iglesia - Consultorios Profesionales - Inmobiliarias - Peluquería Casa de artículos de Computación -
-              Lavandería de ropa - Casas de Decoración Casa de venta de Ropa - Centro Cultural – Jardín Maternal
-            </p>
+            <p className="text-wrap whitespace-pre-wrap">{!loadingTexts && dataTexts[3].text}</p>
           </div>
         </div>
 

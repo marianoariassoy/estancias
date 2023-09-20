@@ -5,6 +5,7 @@ import Loader from './Loader'
 
 const Clubes = () => {
   const { data, loading } = useFetch(`/clubes`)
+  const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos`)
 
   return (
     <section id="clubes">
@@ -15,11 +16,7 @@ const Clubes = () => {
           </div>
           <h1 className="text-primary mb-6 font-cormorant uppercase text-3xl tracking-widest">Clubes</h1>
           <h2 className="text-primary mb-6 text-xl font-medium">Deportes y actividades entre amigos</h2>
-          <p className="text-wrap max-w-3xl m-auto">
-            Estancias ofrece un amplio abanico de posibilidades a la hora de hablar de deportes. Además de tres clubes
-            muy completos, ya con 15 y hasta 20 años de funcionamiento, También contará con una escuela de actividades
-            nauticas e hípicas.
-          </p>
+          <p className="text-wrap max-w-3xl m-auto whitespace-pre-wrap">{!loadingTexts && dataTexts[2].text}</p>
         </div>
 
         {loading ? (

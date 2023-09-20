@@ -1,4 +1,4 @@
-import { Logo, Whatsapp } from '../icons/icons'
+import { Logo, Whatsapp, Instagram } from '../icons/icons'
 import useFetch from '../hooks/useFetch'
 
 type DataProps = {
@@ -8,16 +8,17 @@ type DataProps = {
 
 const Footer = () => {
   const { data, loading } = useFetch(`/contactos`) as DataProps
+  const { data: dataCasa, loading: loadingCasa } = useFetch(`/contactos/casapractika`) as DataProps
 
   return (
     <div className="m-auto max-w-6xl py-20 px-6 text-center lg:text-left">
       <section className="w-full flex flex-col lg:flex-row gap-y-8 border-b border-black pb-12 mb-12 [&>div>div>span>a]:underline">
-        <div className="col lg:w-2/5">
+        <div className="col lg:w-1/4">
           <div className="inline-block logo">
             <Logo />
           </div>
         </div>
-        <div className="col text-sm  grid lg:grid-cols-2 gap-x-12 gap-y-4 ">
+        <div className="col text-sm grid lg:grid-cols-2 gap-x-12 gap-y-4 lg:w-3/4">
           {!loading &&
             data.map((item) => (
               <article key={item.id}>
@@ -32,8 +33,8 @@ const Footer = () => {
             ))}
         </div>
       </section>
-      <section className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        <div className="inline-block">
+      <section className="w-full flex flex-col lg:flex-row gap-y-8 items-start">
+        <div className="col lg:w-1/4">
           <a
             href="https://www.casapractika.com.ar/"
             className="hover:opacity-80 inline-block"
@@ -43,18 +44,26 @@ const Footer = () => {
             <img src="./images/casa.svg" alt="Logo Casa Practika" />
           </a>
         </div>
-        <div className="text-sm">
-          <h3 className="text-tertiary text-xl font-cormorant">VENTAS</h3>
-          <div>(+54 9 11) 5063-1324</div>
+        <div className="col text-sm lg:w-3/4">
+          <h3 className="text-tertiary text-xl font-cormorant uppercase">{!loadingCasa && dataCasa[0].title}</h3>
+          <div>{!loadingCasa && dataCasa[0].text}</div>
           <div className="flex gap-x-2 items-center justify-center lg:justify-start">
             Contactanos vía whatsapp
             <a
-              href="https://wa.me/5491150631324"
+              href={`https://wa.me/${!loadingCasa && dataCasa[0].url}`}
               className="text-white bg-[#31ba45] h-8 w-8 rounded-full flex justify-center items-center hover:text-white hover:bg-black hover:shadow-xl transition-all"
               target="_blank"
               rel="noreferrer"
             >
               <Whatsapp />
+            </a>
+            <a
+              href="https://www.instagram.com/casapractika/?igshid=MWZjMTM2ODFkZg%3D%3D"
+              className="text-white bg-tertiary h-8 w-8 rounded-full flex justify-center items-center hover:text-white hover:bg-black hover:shadow-xl transition-all"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Instagram />
             </a>
           </div>
 

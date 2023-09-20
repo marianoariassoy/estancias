@@ -1,6 +1,10 @@
 import { Miscelanea } from '../icons/icons'
 import { barrios } from '../data/data'
+import useFetch from '../hooks/useFetch'
+
 const Barrios = () => {
+  const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos`)
+
   return (
     <section className="bg-secondary" id="barrios">
       <div className="container m-auto max-w-6xl px-6 py-24">
@@ -9,15 +13,15 @@ const Barrios = () => {
             <Miscelanea />
           </div>
           <h1 className="text-primary mb-6 font-cormorant uppercase text-3xl tracking-widest">Barrios</h1>
-          <p className="text-wrap max-w-3xl m-auto">
-            En Estancias podes recorrer en bici o a pie 450 hectáreas en 8 exclusivos barrios, con ya más de 1100 casas
-            y condominios construidos.
-          </p>
+          <p className="text-wrap max-w-3xl m-auto whitespace-pre-wrap">{!loadingTexts && dataTexts[1].text}</p>
         </div>
-
         <div className="lg:flex">
           <div className="lg:w-3/5 ">
-            <img src="./images/map.jpg" alt="Mapa de Estancias" className="w-full" />
+            <img
+              src="https://www.estanciasdelpilar.com/backend/images-statics/map.jpg"
+              alt="Mapa de Estancias"
+              className="w-full"
+            />
           </div>
           <div className="text-sm lg:w-2/5 mt-8 lg:mt-14 lg:pl-6 text-center lg:text-left">
             {barrios.map((barrio) => (
