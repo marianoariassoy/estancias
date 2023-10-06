@@ -27,14 +27,14 @@ const properties = {
 
 const responsiveSettings = [
   {
-    breakpoint: 800,
+    breakpoint: 900,
     settings: {
       slidesToShow: 3,
       slidesToScroll: 3,
     },
   },
   {
-    breakpoint: 300,
+    breakpoint: 10,
     settings: {
       slidesToShow: 1,
       slidesToScroll: 1,

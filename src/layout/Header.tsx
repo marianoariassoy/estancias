@@ -32,7 +32,7 @@ const Header = () => {
         <div className="text-sm text-white hidden lg:inline-block">
           <div className="row bg-black px-4 py-2 flex items-center justify-between">
             <div className="font-bold tracking-widest">VENTAS</div>
-            <div className="flex items-center gap-x-4">
+            <div className="flex items-center gap-x-2">
               <a
                 href="https://wa.me/5491150631324"
                 className="hover:opacity-50"

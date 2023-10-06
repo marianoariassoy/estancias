@@ -1,9 +1,9 @@
 import { Miscelanea } from '../icons/icons'
-import { barrios } from '../data/data'
 import useFetch from '../hooks/useFetch'
 
 const Barrios = () => {
   const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos`)
+  const { data, loading } = useFetch(`/barrios`)
 
   return (
     <section className="bg-secondary" id="barrios">
@@ -24,11 +24,12 @@ const Barrios = () => {
             />
           </div>
           <div className="text-sm lg:w-2/5 mt-8 lg:mt-14 lg:pl-6 text-center lg:text-left">
-            {barrios.map((barrio) => (
-              <p key={barrio.id} className="mb-4 text-wrap">
-                <span className="font-semibold">{barrio.title}:</span> {barrio.description}
-              </p>
-            ))}
+            {!loading &&
+              data.map((barrio) => (
+                <p key={barrio.id} className="mb-4 text-wrap">
+                  <span className="font-semibold">{barrio.title}:</span> {barrio.text}
+                </p>
+              ))}
           </div>
         </div>
       </div>
