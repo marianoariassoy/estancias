@@ -16,7 +16,7 @@ const Home = () => {
   }, [])
 
   return (
-    <section className="relative mt-24 slider-home bg-gray-100" id="hero">
+    <section className="relative mt-32 lg:mt-24 slider-home bg-gray-100" id="hero">
       {!loading && <Slider data={data} />}
     </section>
   )
